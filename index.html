@@ -3,344 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VEDA Technology Web Development Internship Task 21 — Responsive Navbar with Hamburger Menu built with semantic HTML5, CSS3, and Vanilla JavaScript.">
-  <meta name="author" content="Nagalambika D Koralli">
-  <meta name="theme-color" content="#2D6A4F">
-  <title>Responsive Navbar with Hamburger Menu | VEDA Internship Task 21</title>
+  <meta name="description" content="Clean and responsive navigation bar with a mobile hamburger menu built with HTML5, CSS3, and JavaScript.">
+  <title>My Website - Responsive Navbar</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans for clean modern typography -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- =========================================================================
-       1. SKIP NAVIGATION (Accessibility Best Practice)
-       ========================================================================= -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- =========================================================================
-       2. RESPONSIVE NAVIGATION HEADER
-       ========================================================================= -->
-  <header class="site-header" id="header">
-    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="navbar" aria-label="Main Navigation">
       <div class="nav-container">
         
-        <!-- Brand / Logo -->
-        <a href="#home" class="nav-brand" id="nav-brand" aria-label="VEDA Technology Home">
-          <span class="brand-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-          </span>
-          <span class="brand-text">VEDA<span class="brand-accent">Tech</span></span>
-        </a>
+        <!-- Text Logo -->
+        <a href="#home" class="logo" id="site-logo">My Website</a>
 
-        <!-- Hamburger Menu Toggle Button (Mobile) -->
+        <!-- Hamburger Menu Button (Mobile) -->
         <button 
           type="button" 
           class="nav-toggle" 
           id="nav-toggle" 
           aria-label="Open navigation menu" 
           aria-expanded="false" 
-          aria-controls="nav-menu"
-          aria-haspopup="true">
-          <span class="hamburger-box" aria-hidden="true">
-            <span class="hamburger-line line-1"></span>
-            <span class="hamburger-line line-2"></span>
-            <span class="hamburger-line line-3"></span>
-          </span>
+          aria-controls="nav-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
 
-        <!-- Navigation Links Container -->
-        <div class="nav-menu-wrapper" id="nav-menu-wrapper">
-          <ul class="nav-menu" id="nav-menu" role="menubar">
-            <li class="nav-item" role="none">
-              <a href="#home" class="nav-link active" role="menuitem" data-section="home">
-                <span class="link-label">Home</span>
-              </a>
-            </li>
-            <li class="nav-item" role="none">
-              <a href="#about" class="nav-link" role="menuitem" data-section="about">
-                <span class="link-label">About</span>
-              </a>
-            </li>
-            <li class="nav-item" role="none">
-              <a href="#services" class="nav-link" role="menuitem" data-section="services">
-                <span class="link-label">Services</span>
-              </a>
-            </li>
-            <li class="nav-item" role="none">
-              <a href="#projects" class="nav-link" role="menuitem" data-section="projects">
-                <span class="link-label">Projects</span>
-              </a>
-            </li>
-            <li class="nav-item" role="none">
-              <a href="#contact" class="nav-link" role="menuitem" data-section="contact">
-                <span class="link-label">Contact</span>
-              </a>
-            </li>
-          </ul>
-
-          <!-- Mobile Action Button Inside Drawer -->
-          <div class="nav-drawer-footer">
-            <a href="#contact" class="drawer-cta-btn" id="drawer-cta">Get in Touch</a>
-          </div>
-        </div>
+        <!-- Navigation Links -->
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
 
       </div>
     </nav>
   </header>
 
-  <!-- Mobile Backdrop Overlay -->
-  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+  <!-- Main Content Sections -->
+  <main>
 
-  <!-- =========================================================================
-       3. INTERACTIVE TESTING & DIAGNOSTICS BAR
-       ========================================================================= -->
-  <aside class="diagnostics-bar" aria-label="Navbar Status Diagnostics">
-    <div class="diagnostics-container">
-      <div class="diag-item">
-        <span class="diag-label">Viewport:</span>
-        <span class="diag-badge" id="diag-viewport">Desktop</span>
-      </div>
-      <div class="diag-item">
-        <span class="diag-label">Menu State:</span>
-        <span class="diag-badge" id="diag-menu-state">Closed</span>
-      </div>
-      <div class="diag-item">
-        <span class="diag-label">Active Link:</span>
-        <span class="diag-badge" id="diag-active-link">Home</span>
-      </div>
-      <div class="diag-item">
-        <span class="diag-label">Last Action:</span>
-        <span class="diag-text" id="diag-last-action">Page Initialized</span>
-      </div>
-    </div>
-  </aside>
-
-  <!-- =========================================================================
-       4. MAIN CONTENT (For Testing Navigation & Smooth Scroll)
-       ========================================================================= -->
-  <main id="main-content">
-    
-    <!-- Hero / Home Section -->
-    <section id="home" class="content-section hero-section">
-      <div class="section-container">
-        <div class="badge-pill">VEDA Technology Internship &bull; Task 21</div>
-        <h1 class="hero-title">Responsive Navbar with Hamburger Menu</h1>
-        <p class="hero-description">
-          A modern, accessible, and high-performance navigation component engineered strictly with 
-          <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>Vanilla JavaScript</strong>. 
-          Featuring a mobile-first responsive layout, smooth slide transitions, keyboard accessibility, 
-          and a light pastel green design aesthetic.
+    <!-- Home Section -->
+    <section id="home" class="section hero-section">
+      <div class="container">
+        <h1 class="hero-title">Welcome to My Website</h1>
+        <p class="hero-text">
+          A clean, modern, and fully responsive website with smooth navigation. 
+          Use the navigation links above to explore different sections on this page.
         </p>
-
-        <div class="hero-actions">
-          <a href="#about" class="btn btn-primary">Learn About Task</a>
-          <a href="#services" class="btn btn-outline">Explore Features</a>
-        </div>
-
-        <div class="spec-grid">
-          <div class="spec-card">
-            <div class="spec-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3 class="spec-title">Horizontal Desktop Bar</h3>
-            <p class="spec-text">Clean horizontal list with subtle hover effects and active state indicator for large screens.</p>
-          </div>
-
-          <div class="spec-card">
-            <div class="spec-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-              </svg>
-            </div>
-            <h3 class="spec-title">Animated Hamburger</h3>
-            <p class="spec-text">Smooth 3-bar into 'X' transformation indicating open/closed state on mobile viewports (&le; 768px).</p>
-          </div>
-
-          <div class="spec-card">
-            <div class="spec-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h3 class="spec-title">WAI-ARIA Accessible</h3>
-            <p class="spec-text">Complete keyboard navigation support, focus visible rings, Escape key closing, and ARIA attributes.</p>
-          </div>
+        <div class="hero-buttons">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="content-section">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">About The Project</span>
-          <h2 class="section-title">Clean Engineering &amp; Design Architecture</h2>
-          <p class="section-subtitle">
-            Engineered to fulfill all 10 core requirements of VEDA Technology Web Development Internship Task 21.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <div class="info-card">
-            <h3 class="info-card-title">1. Semantic Structure</h3>
-            <p class="info-card-desc">
-              Utilizes semantic HTML5 elements including <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;button&gt;</code>, and <code>&lt;ul&gt;</code> with appropriate ARIA roles to ensure universal screen reader compatibility.
-            </p>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="section-lead">
+          We focus on building accessible, lightweight, and modern web experiences that look great on any device.
+        </p>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Responsive Design</h3>
+            <p>Layouts adapt gracefully across smartphones, tablets, and desktop displays with zero horizontal scrolling.</p>
           </div>
-
-          <div class="info-card">
-            <h3 class="info-card-title">2. classList.toggle() State</h3>
-            <p class="info-card-desc">
-              Navigation drawer toggling is managed using vanilla JavaScript's <code>classList.toggle('is-active')</code>, keeping the DOM logic clean, performant, and beginner-friendly.
-            </p>
+          <div class="about-card">
+            <h3>Clean Code</h3>
+            <p>Written using clean, semantic HTML5, modular CSS3, and lightweight vanilla JavaScript.</p>
           </div>
-
-          <div class="info-card">
-            <h3 class="info-card-title">3. Slide Transitions</h3>
-            <p class="info-card-desc">
-              Uses hardware-accelerated CSS <code>transform: translateX()</code> transitions for silky 60fps sliding without layout repaints or jank.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3 class="info-card-title">4. Auto-Closing &amp; Escape Key</h3>
-            <p class="info-card-desc">
-              The mobile navigation collapses automatically when any link is selected, when clicking the backdrop overlay, or when the user presses the <kbd>Esc</kbd> key.
-            </p>
+          <div class="about-card">
+            <h3>Accessibility First</h3>
+            <p>Accessible navigation with proper ARIA attributes, semantic landmarks, and full keyboard support.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="content-section bg-subtle">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">Services</span>
-          <h2 class="section-title">Responsive Design Disciplines</h2>
-          <p class="section-subtitle">
-            Core responsive web practices demonstrated within this lightweight implementation.
-          </p>
-        </div>
-
-        <div class="services-list">
-          <div class="service-row">
-            <span class="service-num">01</span>
-            <div class="service-content">
-              <h3 class="service-heading">Mobile-First Media Queries</h3>
-              <p class="service-body">
-                The stylesheet establishes responsive breakpoints using standard CSS media queries at 768px, gracefully scaling from compact smartphones to ultra-wide desktop monitors.
-              </p>
-            </div>
+    <section id="services" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-lead">
+          Explore the range of services we provide to bring creative ideas to life.
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>Building high-performance, responsive websites with clean and maintainable code.</p>
           </div>
-
-          <div class="service-row">
-            <span class="service-num">02</span>
-            <div class="service-content">
-              <h3 class="service-heading">Touch Target Optimization</h3>
-              <p class="service-body">
-                Every navigation link and hamburger toggle satisfies accessibility guidelines with minimum 44&times;44px touch boundaries for effortless mobile interaction.
-              </p>
-            </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>Crafting intuitive user interfaces and seamless user experiences tailored for your audience.</p>
           </div>
-
-          <div class="service-row">
-            <span class="service-num">03</span>
-            <div class="service-content">
-              <h3 class="service-heading">Light Pastel Green Color Harmony</h3>
-              <p class="service-body">
-                Carefully selected tokens adhering to WCAG AAA contrast: `#2D6A4F` deep sage primary green, `#EAF5EE` mint badge background, and `#1C2B21` high-contrast dark green text.
-              </p>
-            </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Performance Optimization</h3>
+            <p>Speeding up web applications for optimal loading times and seamless user interactions.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="content-section">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">Projects</span>
-          <h2 class="section-title">Internship Portfolio Works</h2>
-          <p class="section-subtitle">
-            A selection of completed tasks from the VEDA Technology Web Development Internship series.
-          </p>
-        </div>
-
-        <div class="project-cards">
-          <div class="project-item">
-            <span class="project-tag">Task 19</span>
-            <h3 class="project-name">Star Rating Widget</h3>
-            <p class="project-summary">Accessible 5-star rating system with real-time hover previews, dynamic score sentiment, and reset controls.</p>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lead">
+          A showcase of recent work highlighting modern front-end web development practices.
+        </p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">Project Alpha</div>
+            <div class="project-body">
+              <h3>Interactive Dashboard</h3>
+              <p>A minimal analytics dashboard with real-time data visualisations and dark mode support.</p>
+            </div>
           </div>
-
-          <div class="project-item">
-            <span class="project-tag">Task 20</span>
-            <h3 class="project-name">Interactive Tabs Component</h3>
-            <p class="project-summary">Modular tab navigation interface featuring fluid content switching and complete keyboard arrow navigation.</p>
+          <div class="project-card">
+            <div class="project-header">Project Beta</div>
+            <div class="project-body">
+              <h3>E-Commerce Storefront</h3>
+              <p>A clean shopping experience featuring instant filtering, cart management, and fast checkout.</p>
+            </div>
           </div>
-
-          <div class="project-item project-highlight">
-            <span class="project-tag">Task 21 (Current)</span>
-            <h3 class="project-name">Responsive Navbar with Hamburger</h3>
-            <p class="project-summary">Fully responsive navigation bar with smooth mobile slide-out menu, animated hamburger, and accessibility features.</p>
+          <div class="project-card">
+            <div class="project-header">Project Gamma</div>
+            <div class="project-body">
+              <h3>Brand Landing Page</h3>
+              <p>A conversion-focused landing page with sleek animations and responsive typography.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="content-section bg-subtle">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">Contact</span>
-          <h2 class="section-title">Get In Touch</h2>
-          <p class="section-subtitle">
-            Feel free to connect regarding this project or the VEDA Technology internship.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-info">
-            <h3 class="contact-info-title">Internship Project Information</h3>
-            <p class="contact-info-text">
-              <strong>Developer:</strong> Nagalambika D Koralli<br>
-              <strong>Program:</strong> VEDA Technology Web Development Internship<br>
-              <strong>Repository:</strong> dharmarayank946/Syntechhub_Portfolio_Website<br>
-              <strong>Status:</strong> Ready for GitHub Pages Deployment
-            </p>
-          </div>
-          <div class="contact-actions">
-            <a href="https://github.com/dharmarayank946" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View GitHub Profile</a>
-            <a href="#home" class="btn btn-outline">Back to Top &uarr;</a>
-          </div>
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">
+          Have questions or want to collaborate? Send a message using the form below.
+        </p>
+        <div class="contact-wrapper">
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- =========================================================================
-       5. FOOTER
-       ========================================================================= -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <p class="footer-text">
-        &copy; 2026 <strong>VEDA Technology Web Development Internship</strong> &bull; Task 21 &bull; Created by Nagalambika D Koralli.
-      </p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 My Website. All rights reserved.</p>
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -351,7 +204,6 @@
     </div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
