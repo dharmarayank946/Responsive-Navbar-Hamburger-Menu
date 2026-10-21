@@ -11,8 +11,8 @@ A clean, responsive, and accessible **Responsive Navbar with Hamburger Menu** bu
 - **Core Technologies:** HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Build Tools / Dependencies:** None (Zero npm, Node.js, bundlers, or third-party CSS/JS frameworks)
 - **Deployment Platform:** GitHub Pages
-- **GitHub Repository:** [https://github.com/dharmarayank946/Responsive-Navbar-with-Hamburger-Menu.git](https://github.com/dharmarayank946/Responsive-Navbar-with-Hamburger-Menu.git)
-- **Live Demo (GitHub Pages):** [https://dharmarayank946.github.io/Responsive-Navbar-with-Hamburger-Menu/](https://dharmarayank946.github.io/Responsive-Navbar-with-Hamburger-Menu/)
+- **GitHub Repository:** [https://github.com/dharmarayank946/Responsive-Navbar-Hamburger-Menu.git](https://github.com/dharmarayank946/Responsive-Navbar-Hamburger-Menu.git)
+- **Live Demo (GitHub Pages):** [https://dharmarayank946.github.io/Responsive-Navbar-Hamburger-Menu/](https://dharmarayank946.github.io/Responsive-Navbar-Hamburger-Menu/)
 - **Theme Palette (Light Pastel Green & White):**
   - **Page Background:** `#F4F8F5` (Soft mint background tint)
   - **Navbar & Card Background:** `#FFFFFF` (Pristine clean white)
@@ -56,7 +56,7 @@ A clean, responsive, and accessible **Responsive Navbar with Hamburger Menu** bu
 ## 📂 Project Directory Structure
 
 ```plaintext
-Task21-Responsive-Navbar/
+Task21-Responsive-Navbar-Hamburger-Menu/
 │
 ├── index.html        # Semantic HTML5 markup, accessible navbar, and section demo
 ├── style.css         # Light pastel green styling, transitions, and media queries
@@ -159,26 +159,26 @@ To deploy this project directly to **GitHub Pages**:
 
 1. **Initialize Git Repository (if not already done):**
    ```bash
-   cd d:/Projects/Veda/Task21-Responsive-Navbar
+   cd d:/Projects/Veda/Task21-Responsive-Navbar-Hamburger-Menu
    git init
    git add .
-   git commit -m "feat: complete VEDA Internship Task 21 Responsive Navbar with Hamburger Menu"
+   git commit -m "Complete VEDA Task 21 Responsive Navbar"
    ```
 
 2. **Connect to GitHub Remote:**
    ```bash
-   git remote add origin https://github.com/dharmarayank946/Responsive-Navbar-with-Hamburger-Menu.git
+   git remote add origin https://github.com/dharmarayank946/Responsive-Navbar-Hamburger-Menu.git
    git branch -M main
    git push -u origin main
    ```
 
 3. **Enable GitHub Pages:**
-   - Navigate to your repository on GitHub: `https://github.com/dharmarayank946/Responsive-Navbar-with-Hamburger-Menu`
+   - Navigate to your repository on GitHub: `https://github.com/dharmarayank946/Responsive-Navbar-Hamburger-Menu`
    - Click **Settings** &rarr; **Pages** (under Code and automation).
    - Under **Build and deployment** &gt; **Source**, select `Deploy from a branch`.
    - Under **Branch**, select `main` and folder `/ (root)`, then click **Save**.
    - Within 1–2 minutes, your project will be live at:
-     `https://dharmarayank946.github.io/Responsive-Navbar-with-Hamburger-Menu/`
+     `https://dharmarayank946.github.io/Responsive-Navbar-Hamburger-Menu/`
 
 ---
 
